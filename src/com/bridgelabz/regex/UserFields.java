@@ -6,6 +6,7 @@ public class UserFields
     private String lastName;
     private String email;
     private String mobileNumber;
+    private String password;
 
     public String getFirstName()
     {
@@ -40,6 +41,13 @@ public class UserFields
     public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
     }
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     @Override
     public String toString() {
@@ -48,6 +56,7 @@ public class UserFields
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", mobileNumber='" + mobileNumber + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 }

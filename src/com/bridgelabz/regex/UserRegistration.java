@@ -92,6 +92,25 @@ public class UserRegistration {
         }
     }
     /**
+     * asking user to enter the password and setting the password.
+     */
+    public void userPassWord()
+    {
+        System.out.print("enter the user password:");
+        String password = scanner.next();
+        boolean passwordMatcher = Pattern.compile("^[a-z]{8}$").matcher(password).matches();
+        if(passwordMatcher == true)
+        {
+            userFields.setPassword(password);
+        }
+        else
+        {
+            System.err.println("you have entered wrong input User need to follow pre -defined Password rules minimum 8  Characters ");
+            System.out.println();
+            userPassWord();
+        }
+    }
+    /**
      * printing the user details.
      */
     public void printUserDetails()
@@ -107,6 +126,7 @@ public class UserRegistration {
         userRegistration.lastName();
         userRegistration.userEmail();
         userRegistration.userMobileNumber();
+        userRegistration.userPassWord();
         userRegistration.printUserDetails();
     }
 

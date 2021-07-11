@@ -72,7 +72,25 @@ public class UserRegistration {
             userEmail();
         }
     }
-
+    /**
+     * asking user to enter the mobile number and setting the mobile number.
+     */
+    public void userMobileNumber()
+    {
+        System.out.print("enter the Mobile Number:");
+        String mobileNumber = scanner.nextLine();
+        boolean mobileNumberMatcher = Pattern.compile("^[0-9]\\d{1}\\s[789]\\d{9}$").matcher(mobileNumber).matches();
+        if(mobileNumberMatcher == true)
+        {
+            userFields.setMobileNumber(mobileNumber);
+        }
+        else
+        {
+            System.err.println("you have entered wrong input Mobile Format - E.g. 91 9919819801 - Country code follow by space and 10 digit number");
+            System.out.println();
+            userMobileNumber();
+        }
+    }
     /**
      * printing the user details.
      */
@@ -88,6 +106,7 @@ public class UserRegistration {
         userRegistration.firstName();
         userRegistration.lastName();
         userRegistration.userEmail();
+        userRegistration.userMobileNumber();
         userRegistration.printUserDetails();
     }
 

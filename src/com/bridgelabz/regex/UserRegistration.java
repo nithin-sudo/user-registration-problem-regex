@@ -52,6 +52,27 @@ public class UserRegistration {
             lastName();
         }
     }
+
+    /**
+     * asking user to enter the email and setting the email.
+     */
+    public void userEmail()
+    {
+        System.out.print("enter the email:");
+        String email = scanner.next();
+        boolean emailMatcher = Pattern.compile("^[a-z]+([._%+-][A-Za-z0-9]+)*@([A-Za-z0-9]+).([A-Za-z]{2,4})(\\.[A-Za-z]{2,3})?$").matcher(email).matches();
+        if(emailMatcher == true)
+        {
+            userFields.setEmail(email);
+        }
+        else
+        {
+            System.err.println("you have entered wrong input E.g. abc.xyz@bl.co.in - Email has 3 mandatory parts (abc, bl & co) and 2 optional (xyz & in) with precise @ and . positions ");
+            System.out.println();
+            userEmail();
+        }
+    }
+
     /**
      * printing the user details.
      */
@@ -66,6 +87,7 @@ public class UserRegistration {
         UserRegistration userRegistration = new UserRegistration();
         userRegistration.firstName();
         userRegistration.lastName();
+        userRegistration.userEmail();
         userRegistration.printUserDetails();
     }
 

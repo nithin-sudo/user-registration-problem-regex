@@ -4,15 +4,7 @@ public class UserFields
 {
     private String firstName;
     private String lastName;
-    public String getLastName()
-    {
-        return lastName;
-    }
-
-    public void setLastName(String lastName)
-    {
-        this.lastName = lastName;
-    }
+    private String email;
 
     public String getFirstName()
     {
@@ -23,12 +15,29 @@ public class UserFields
     {
         this.firstName = firstName;
     }
+    public String getLastName()
+    {
+        return lastName;
+    }
 
+    public void setLastName(String lastName)
+    {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email)
+    {
+        this.email = email;
+    }
     @Override
     public String toString() {
         return "UserFields{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 }

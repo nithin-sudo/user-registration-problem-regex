@@ -98,14 +98,14 @@ public class UserRegistration {
     {
         System.out.print("enter the user password:");
         String password = scanner.next();
-        boolean passwordMatcher = Pattern.compile("^[a-z]{8}$").matcher(password).matches();
+        boolean passwordMatcher = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z]).{8,20}$").matcher(password).matches();
         if(passwordMatcher == true)
         {
             userFields.setPassword(password);
         }
         else
         {
-            System.err.println("you have entered wrong input User need to follow pre -defined Password rules minimum 8  Characters ");
+            System.err.println("you have entered wrong input User need to follow pre -defined Password rules minimum 8  Characters and one captital letter");
             System.out.println();
             userPassWord();
         }

@@ -98,7 +98,7 @@ public class UserRegistration {
     {
         System.out.print("enter the user password:");
         String password = scanner.next();
-        boolean passwordMatcher = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,20}$").matcher(password).matches();
+        boolean passwordMatcher = Pattern.compile("^(?=.*[0-9])(?=.*[@#$%^&+=])(?=.*[a-z])(?=.*[A-Z]).{8,20}$").matcher(password).matches();
         if(passwordMatcher == true)
         {
             userFields.setPassword(password);
